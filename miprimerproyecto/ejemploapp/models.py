@@ -4,8 +4,7 @@ from django.db import models
 class libro (models.Model):
     nombre=models.CharField(max_length=45)
     descripcion=models.CharField(max_length=45)
-    isbn=models.CharField(max_length=45)
-    copiar = models.IntegerField(null=True)
+    ISBN=models.CharField(max_length=45)
 class Prestamo(models.Model):
     Fechaprestamo=models.DateField("Fecha de prestamo",max_length=45)
     nombrecliente=models.CharField("Nombre del cliente",max_length=45)

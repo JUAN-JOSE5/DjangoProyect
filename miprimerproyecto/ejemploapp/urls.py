@@ -1,11 +1,11 @@
-from django.urls import path
-from .views import *
-
+from django.urls import path, include
+from .views import cargar_inicio, LibroList
 urlpatterns = [
-    path('cocinero/nuevo', nuevococinero),
-    path('pedido/', consultarpedidos),
-    path('inventario/', inventario),
-    path('personal/', personal),
-    path('informes/', informes),
+    #Vista tipo funcion
+    path('',cargar_inicio, name = 'inicio'),
+    #Vista tipo clase
+    path('libros/', LibroList.as_view(), name = 'listar_libros'),
+
+    
 
 ]
