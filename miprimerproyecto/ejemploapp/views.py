@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy 
 
 from .models import libro
 
@@ -14,4 +15,6 @@ class LibroList(ListView):
 
 class LibroCreate(CreateView):
     model = libro
-    template_name = 'miapp/nuevo_libro.html'
+    fields = ['nombre','descripcion','ISBN','Copias']
+    template_name = 'ejemploapp/nuevo_libro.html'
+    success_url = reverse_lazy('listar_libros')

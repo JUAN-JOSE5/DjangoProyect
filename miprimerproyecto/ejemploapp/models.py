@@ -5,6 +5,7 @@ class libro (models.Model):
     nombre=models.CharField(max_length=45)
     descripcion=models.CharField(max_length=45)
     ISBN=models.CharField(max_length=45)
+    Copias=models.IntegerField()
 class Prestamo(models.Model):
     Fechaprestamo=models.DateField("Fecha de prestamo",max_length=45)
     nombrecliente=models.CharField("Nombre del cliente",max_length=45)
